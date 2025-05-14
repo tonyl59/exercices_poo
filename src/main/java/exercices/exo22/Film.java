@@ -8,6 +8,14 @@ public class Film {
     private String sortie;
     private String genre;
 
+    // Constructeurs
+    public Film(String titre, String realisateur, String sortie, String genre) {
+        this.titre = titre;
+        this.realisateur = realisateur;
+        this.sortie = sortie;
+        this.genre = genre;
+    }
+    //Méthodes
     public String getTitre() {
         return titre;
     }
@@ -37,13 +45,6 @@ public class Film {
     }
 
     public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
-    public Film(String titre, String realisateur, String sortie, String genre) {
-        this.titre = titre;
-        this.realisateur = realisateur;
-        this.sortie = sortie;
         this.genre = genre;
     }
 

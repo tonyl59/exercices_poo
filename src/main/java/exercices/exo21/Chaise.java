@@ -7,14 +7,22 @@ public class Chaise {
     private String couleur;
     private double prix;
 
-
+    // Constructeurs
     public Chaise(int nb_pieds, String materiaux, String couleur, double prix) {
         this.nb_pieds = nb_pieds;
         this.materiaux = materiaux;
         this.couleur = couleur;
         this.prix = prix;
+    }
+    public Chaise() {
+            this.nb_pieds = 1;
+            this.materiaux = "bois";
+            this.couleur = "rouge";
+            this.prix = 1;
 
     }
+
+    // Méthodes
 
     public int getNb_pieds() {
         return nb_pieds;
@@ -50,6 +58,6 @@ public class Chaise {
 
     @Override
     public String toString() {
-        return "Je suis une chaise avec " + nb_pieds + " pied(s) en " + materiaux + " de couleur " + couleur + " à un prix de " + prix;
+        return "Je suis une chaise avec " + nb_pieds + " pied(s) en " + materiaux + " de couleur " + couleur + " à un prix de " + prix+ "€";
     }
 }

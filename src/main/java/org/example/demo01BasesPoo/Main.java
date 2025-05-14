@@ -30,7 +30,8 @@ public class Main {
         personne1.age = 42;
         System.out.println("age de la personne1 : "+personne1.age);
         */
-        // Personne personne1 = new Personne();
+        Personne personne1 = new Personne();
+        System.out.println(personne1);
         Personne personne2 = new Personne(45, "toto","tata", 45);
         // On a ecrasé le constructeur par defaut... donc erreur
         System.out.println(personne2); // le sout me retourne un truc incomprehensible pour nous avant le getter.

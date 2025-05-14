@@ -18,6 +18,20 @@ public class Personne {
     }
 
 
+    // 2e forme du constructeur , il est polymorphe (plusieurs forme)
+    public Personne(){
+
+    }
+
+    // 3e forme du cosntructeur
+    public Personne( String nom, String prenom, int age) {
+        this.code = 999;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.age = age;
+    }
+
+
     // Les Méthodes
     public void setNom(String nom){
         if (nom.toLowerCase().startsWith("c")){
@@ -33,6 +47,15 @@ public class Personne {
 
     public String getPrenom(){
         return prenom;
+    }
+    @Override
+    public String toString() {
+        return "Personne{" +
+                "code=" + code +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", age=" + age +
+                '}';
     }
 
 }
