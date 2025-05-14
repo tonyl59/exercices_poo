@@ -7,6 +7,7 @@ public class Joueur {
     private String nom;
     private int niveau;
     private int exp;
+    private int nb_quetes;
 
     //Constructeur
     public Joueur(String nom, int niveau, int exp) {
@@ -15,7 +16,7 @@ public class Joueur {
         this.exp = exp;
     }
 
-    // Méthodes
+    // Getters & Setters
     public String getNom() {
         return nom;
     }
@@ -42,19 +43,26 @@ public class Joueur {
 
     public void UneQuete() {
         exp = exp + 10;
+        nb_quetes++;
     }
 
+    // Méthodes
     public void niveausup() {
         if (exp >= 100) {
             niveau = niveau + 1;
             exp = exp - 100;
 
-
         }
     }
 
+    public void chgmt_nom(String nouveau_nom){
+        nom = nouveau_nom;
+        System.out.println(String.format("Le joueur %s a changé son nom en %s !", nom, nouveau_nom));
+    }
+
+
     @Override
     public String toString() {
-        return String.format("Le joueur %s est niveau %s avec %s points d'expérience", nom, niveau, exp);
+        return String.format("Le joueur %s est niveau %s avec %s points d'expérience à la quete n°%s", nom, niveau, exp, nb_quetes);
     }
 }

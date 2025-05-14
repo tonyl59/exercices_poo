@@ -11,5 +11,8 @@ public class Main {
         hero.UneQuete();
         hero.niveausup();
         System.out.println(hero); // passe de 95 à 105 points d'expérience, a gagné un niveau, les pts d'exp sont à 5.
+
+        hero.chgmt_nom("Pierre");
+        System.out.println(hero);
     }
 }
