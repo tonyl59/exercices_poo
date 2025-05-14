@@ -49,7 +49,7 @@ public class Joueur {
     // Méthodes
     public void niveausup() {
         if (exp >= 100) {
-            niveau = niveau + 1;
+            niveau ++;
             exp = exp - 100;
 
         }
