@@ -1,4 +1,4 @@
-package exercices.exo27;
+package exercices_classe.exo27;
 
 
 

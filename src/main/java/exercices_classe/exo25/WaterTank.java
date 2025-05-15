@@ -1,4 +1,4 @@
-package exercices.exo25;
+package exercices_classe.exo25;
 // ici faut faire un statique
 public class WaterTank {
     // Attributs

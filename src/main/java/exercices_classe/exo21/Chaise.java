@@ -1,4 +1,4 @@
-package exercices.exo21;
+package exercices_classe.exo21;
 
 public class Chaise {
     // Attributs

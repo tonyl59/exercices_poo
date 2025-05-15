@@ -1,4 +1,4 @@
-package exercices.exo23;
+package exercices_classe.exo23;
 
 public class Main {
     public static void main(String[] args) {
