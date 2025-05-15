@@ -41,46 +41,44 @@ public class Main {
                 - 4) Quitter
          */
 
-    Entreprise entreprise1 = new Entreprise("intel","111 111 111 11111","12 Rue du Truc, 10000 Lala","www.entreprise1.com");
-    Entreprise entreprise2 = new Entreprise("untel", "222 222 222 22222","18 Rue de la Chose, 11000 Lolo", "www.entreprise2.com");
-    Entreprise entreprise3 = new Entreprise("ontel", "333 333 333 33333","24 Rue du Bidule, 25000 Lili", "www.entreprise2.com");
-
-    System.out.println(entreprise1.getNom());
 
     AnnuaireEntreprise annuaire = new AnnuaireEntreprise();
-    annuaire.ajout_entreprise(entreprise1);
-    annuaire.ajout_entreprise(entreprise2);
-    annuaire.ajout_entreprise(entreprise3);
+    annuaire.ajout_entreprise("intel","111 111 111 11111","12 Rue du Truc, 10000 Lala","www.entreprise1.com");
+    annuaire.ajout_entreprise("untel", "222 222 222 22222","18 Rue de la Chose, 11000 Lolo", "www.entreprise2.com");
+    annuaire.ajout_entreprise("ontel", "333 333 333 33333","24 Rue du Bidule, 25000 Lili", "www.entreprise3.com");
 
     annuaire.voir_noms();
 
     annuaire.voir_infos_entreprises();
 
+        System.out.println("Bienvenue sur l'annuaire d'entreprise");
+        Scanner scanner = new Scanner(System.in);
+        int choix = 0;
+        while (choix != 4){
+            System.out.println("""
+        - 1) Ajouter une entreprise
+        - 2) Voir tout les noms d'entreprises
+        - 3) Voir le détail de toutes les entreprises
+        - 4) quitter
+Veuillez saisir un chiffre entre 1 à 4
+    """);
+            choix = scanner.nextInt();
 
-
-    iEntreprise info_entreprise;
-    Scanner scanner = new Scanner(System.in);
-
-    System.out.println("taper 1 pour du fr et 2 pour du en :");
-    int choix = scanner.nextInt();
-    if(choix == 1){
-        message = new MessageV1();
-    }else{
-        message = new EnglishMessage();
+            switch (choix) {
+                case 1:
+                    annuaire.ajout_entreprise_interface();
+                    break;
+                case 2:
+                    annuaire.voir_noms();
+                    break;
+                case 3:
+                    annuaire.voir_infos_entreprises();
+                    break;
+                default:
+                    System.out.println("Sortie de l'interface, bonne journée à vous");
+                    break;
+        };
+        }
     }
-    }
-
-
 }
 
-
-
-/*
-Boite<String> boite = new Boite();
-        boite.setContenu("coucou");
-        System.out.println(boite.getContenu());
-
-Boite <Chat> boiteAChat = new Boite<>();
-        boiteAChat.setContenu(new Chat(9,"toto"));
-        System.out.println(boiteAChat.getContenu()); */
-//List<String> prenoms = new ArrayList<>();
