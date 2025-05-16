@@ -1,5 +1,7 @@
 package org.example.demo07Collection;
 
+import org.example.demo02Heritage.Canide;
+
 import java.util.*;
 
 public class Main {
@@ -32,6 +34,8 @@ public class Main {
         SortedSet<String> tailset = sortedSet.tailSet("Javascript");
         System.out.println("Sous ensemble après Javascript "+tailset);
 
+
+
         // Démo pour le HashMap
         Map<String,Integer> hashMap = new HashMap<>();
         hashMap.put("Java", 20);
@@ -56,6 +60,26 @@ public class Main {
         System.out.println("Supprimer l'élément avec la clé Toto");
         hashMap.remove("Toto");
         System.out.println("Après suppression : "+hashMap);
+
+        // Parcourir notre hashmap
+
+        // En utilisant les clés
+        for (String key: hashMap.keySet()){
+            System.out.println("La clé est : "+key);
+            System.out.println("Et sa valeur : "+hashMap.get(key));
+        }
+
+        // en utilisant les valeurs
+        for (int value: hashMap.values()){
+            System.out.println("Ma valeur : "+ value);
+        }
+
+
+            //parcours avec foreach
+        // parcours avec une boucle foreach
+        for (Map.Entry<String,Integer> entry: hashMap.entrySet()){
+            System.out.println("Ma clé : "+entry.getKey()+" et ma valeur : "+entry.getValue());
+        }
 
     }
 }
