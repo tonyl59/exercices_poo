@@ -6,14 +6,17 @@ import java.util.Map;
 public class Ramette extends ArticleUnitaire {
 
     // Attributs
-    double grammage;
+    private double grammage;
+    private static int compte_ramette;
 
     // Constructeur
 
-    public Ramette(int ref_unique, String nom, int prix, double grammage) {
-        super(ref_unique, nom, prix);
+    public Ramette(String nom, double prix, double grammage) {
+        super( nom, prix);
+        compte_ramette ++;
+        this.setRef_unique("RA"+compte_ramette);
         this.grammage = grammage;
-        getHashArticle().put(getRef_unique(), nom); // ref_unique et nom de l'article unitaire
+        getHashArticle().put(getRef_unique(), this); // ref_unique et nom de l'article unitaire
 
     }
 
@@ -26,4 +29,17 @@ public class Ramette extends ArticleUnitaire {
     public void setGrammage(double grammage) {
         this.grammage = grammage;
     }
+
+    // Méthodes
+
+    @Override
+    public String toString() {
+        return "Ramette{" +
+                "ref_unique='"+ getRef_unique() + "', " +
+                "nom='" + getNom() + "', " +
+                "prix='" + getPrix() + "', " +
+                "grammage='" + grammage +
+                "'}";
+    }
 }
+

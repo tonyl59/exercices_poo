@@ -5,13 +5,17 @@ public class Lot extends Article {
     private ArticleUnitaire article;
     private int qte;
     private double remise;
+    private static int compte_lot;
 
-    public Lot(int ref_unique,ArticleUnitaire article, int qte, double remise) {
+    public Lot(ArticleUnitaire article, int qte, double remise) {
         super();
+        compte_lot ++;
+        this.setRef_unique("LO"+compte_lot);
         this.article = article;
         this.qte = qte;
         this.remise = remise;
-        getHashArticle().put(getRef_unique(), getArticle().getNom()); // ref_unique & nom de l'article unitaire
+
+        getHashArticle().put(getRef_unique(), this); // ref_unique & nom de l'article unitaire
     }
 
     public ArticleUnitaire getArticle() {
@@ -36,5 +40,18 @@ public class Lot extends Article {
 
     public void setRemise(double remise) {
         this.remise = remise;
+    }
+
+    //Méthodes
+
+
+    @Override
+    public String toString() {
+        return "Lot{" +
+                "ref_unique='" + getRef_unique() +
+                "', article='" + article +
+                "', qte=" + qte +
+                ", remise=" + remise +
+                "%}";
     }
 }

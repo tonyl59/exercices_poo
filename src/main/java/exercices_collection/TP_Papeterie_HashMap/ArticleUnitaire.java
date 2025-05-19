@@ -1,14 +1,14 @@
 package exercices_collection.TP_Papeterie_HashMap;
 
-public class ArticleUnitaire extends Article {
+public abstract class ArticleUnitaire extends Article {
 
     // Attribut
     private String nom;
-    private int prix;
+    private double prix;
 
     // Constructors
 
-    public ArticleUnitaire(int ref_unique, String nom, int prix) {
+    public ArticleUnitaire(String nom, double prix) {
         super();
         this.nom = nom;
         this.prix = prix;
@@ -22,11 +22,11 @@ public class ArticleUnitaire extends Article {
         this.nom = nom;
     }
 
-    public int getPrix() {
+    public double getPrix() {
         return prix;
     }
 
-    public void setPrix(int prix) {
+    public void setPrix(double prix) {
         this.prix = prix;
     }
 }

@@ -11,10 +11,7 @@ public class Ligne {
     public Ligne(ArticleUnitaire article, int qte) {
         this.article =  article;
         this.qte = qte;
-
     }
-
-
 
 
     // Setters & Getters
@@ -37,13 +34,16 @@ public class Ligne {
 
     // Méthodes
 
-    public void info(){
-        String info = article.getHashArticle().get(this.getArticle().getRef_unique()); // this.getArticle.getRefunique represente la ref unique TODO ici j'utilise la ref unique pour appeler le nom d'article
-    }
+    /*public String info(){
+        String info = Article.getHashArticle();
+                //article.getHashArticle().get(this.getArticle().getRef_unique()); // this.getArticle.getRefunique represente la ref unique TODO ici j'utilise la ref unique pour appeler le nom d'article
+    } */
     public String AfficheLigne(){
-        return String.format("%s - %s - %s - %s - %s",qte, article.getRef_unique(), article.getNom(), article.getPrix(),qte*article.getPrix());
+        return article.toString(); // String.format("%s - %s - %s - %s - %s",qte, article.getRef_unique(), article.getNom(), article.getPrix(),qte*article.getPrix());
         //TODO Faire une methode (info) qui va aggreger les .get.get.get puis finir la méthode facture
     }
+
+
 }
 
 

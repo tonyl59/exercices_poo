@@ -3,32 +3,28 @@ package exercices_collection.TP_Papeterie_HashMap;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Article {
+public abstract class Article {
     // Attribut
-    private int ref_unique;
-    private Map<Integer, String> hashArticle = new HashMap<>();
+    private static String ref_unique;
+    private static Map<String, Article> hashArticle = new HashMap<>();
 
-
-    // Constructeur
-    public Article() {
-        this.ref_unique++;
-    };
 
     // Setter & Getter
-    public int getRef_unique() {
+    public String getRef_unique() {
         return ref_unique;
     }
 
-    public void setRef_unique(int ref_unique) {
-        this.ref_unique = ref_unique;
+    public void setRef_unique(String ref_unique) {
+        Article.ref_unique = ref_unique;
     }
 
-    public Map<Integer, String> getHashArticle() {
+    public static Map<String, Article> getHashArticle() {
         return hashArticle;
     }
 
-    public void setHashArticle(Map<Integer, String> hashArticle) {
-        this.hashArticle = hashArticle;
+    public static void setHashArticle(Map<String, Article> hashArticle) {
+        Article.hashArticle = hashArticle;
     }
+
 }
 
